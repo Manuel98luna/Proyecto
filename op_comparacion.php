@@ -10,9 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Proyecto</title>
+    <title>Operadores comparativos</title>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#" style="color: aliceblue;">Proyecto</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -34,12 +34,12 @@
                             Clases PW
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" style="color: black;" href="Aritmeticos.html">Operadores Aritmeticos</a></li>
-                            <li><a class="dropdown-item" style="color: black;" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" style="color: aliceblue;" href="Aritmeticos.html">Operadores Aritmeticos</a></li>
+                            <li><a class="dropdown-item" style="color: aliceblue;" href="#">Another action</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" style="color: black;" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" style="color: aliceblue;" href="#">Something else here</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -52,7 +52,8 @@
                 </form>
             </div>
         </div>
-    </nav>
+    </nav> -->
+    <?php require_once "Menu.php" ?>
 </head>
 
 <body>
@@ -61,30 +62,30 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-6 p-5 bg-white shadow-lg rounded">
-               <h3>Registro de Ususario</h3>
+               <h3>Operadores Comparacion</h3>
                 <HR>
                 
-                <form method="post" action="Recibe_post.php">
+                <form method="post" action="Calculo_comparacion.php">
                         <div class="form-group">
-                            <label for="nombre">Nombre:</label>
-                            <input id="nombre" class="form-control" type="text" name="nombre">
+                            <label for="valor1">Valor 1:</label>
+                            <input id="valor1" class="form-control" type="text" name="valor1" required autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <label for="usuario">Usuario:</label>
-                            <input id="ususario" class="form-control" type="text" name="usuario">
+                            <label for="valor2">Valor 2:</label>
+                            <input id="valor2" class="form-control" type="text" name="valor2" required autocomplete="off">
                         </div>
-                        <div class="form-group">
-                            <label for="Password">Password:</label>
-                            <input id="Password" class="form-control" type="Password" name="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="Password2">Repetir Password:</label>
-                            <input id="Password2" class="form-control" type="Password" name="Password2">
-                        </div>
-                        <div class="form-group">
-                            <label for="correo">Correo:</label>
-                            <input id="correo" class="form-control" type="email" name="correo">
-                        </div>
+                        <!-- <div class="form-group">
+                            <label for="operacion">Seleccione una operacion</label>
+                            <select name="operacion" id="operacion" class="form-control" required autocomplete="off">
+                            <option value="igual">Igual</option>
+                            <option value="diferente">Diferente</option>
+                            <option value="mayor_que">Mayor Que</option>
+                            <option value="menor_que">Menor Que</option>
+                            <option value="mayor_igual">Mayor o Igual</option>
+                            <option value="menor_igual">Menor o Igual</option>
+                        </select>
+                        </div> -->
+                        
                         <br>
                         <button type="submit" class="btn btn-primary">Iniciar</button>
                         <button type="reset" class="btn btn-danger">Cancelar</button>

@@ -1,18 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <title>Operadores Artimeticos</title>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <title>Recibe valores aritmeticos</title>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#" style="color: aliceblue;">Proyecto</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -52,51 +47,61 @@
                 </form>
             </div>
         </div>
-    </nav>
+    </nav> -->
+    <?php require_once "Menu.php" ?>
 </head>
-
 <body>
+<?php 
 
-    <!-- Contono de un formulario rounded esquinas redondiadas, shadow-lg sombras -->
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-6 p-5 bg-white shadow-lg rounded">
-               <h3>Operadores Aritmeticos</h3>
-                <HR>
-                
-                <form method="post" action="aritmeticos.php">
-                        <div class="form-group">
-                            <label for="valor1">Valor 1:</label>
-                            <input id="valor1" class="form-control" type="text" name="valor1">
-                        </div>
-                        <div class="form-group">
-                            <label for="valor2">Valor 2:</label>
-                            <input id="valor2" class="form-control" type="text" name="valor2">
-                        </div>
-                        <div class="form-group">
-                            <label for="operacion">Seleccione una operacion</label>
-                            <select name="operacion" id="operacion" class="form-control">
-                            <option value="s">Sumar</option>
-                            <option value="r">Restar</option>
-                            <option value="m">Multiplicar</option>
-                            <option value="d">Dividir</option>
-                        </select>
-                        </div>
-                        
-                        <br>
-                        <button type="submit" class="btn btn-primary">Iniciar</button>
-                        <button type="reset" class="btn btn-danger">Cancelar</button>
+$valor1 = $_POST['valor1'];
+$valor2 = $_POST['valor2'];
+$operacion = $_POST['operacion'];
 
-                    </form>
-            </div>
-        </div>
-    </div>
+switch($operacion){
+case "s":
+ 
+ $op=$valor1+$valor2;
+ $nombreOp="Suma";
+    break;
+    case "r":
+        
+        $op=$valor1-$valor2;
+        $nombreOp="Resta";
+        break;
+    
+        case "m":
+            
+            $op=$valor1*$valor2;
+            $nombreOp="Multiplicacón";
+            break;
+    
+            case "d":
+                /* echo $valor1/$valor2; */
+                $op=$valor1/$valor2;
+                $nombreOp="División";
+                break;
+            }
 
+?>    
 
+<div class="container">
+    
+El valor enviado es: <?php echo $valor1 ?><br>
+    El valor enviado es: <?php echo $valor2 ?><br>
+<table class="table table-success table-striped table-bordered" >
+    <tbody>
+           <tr>
+            <td>Operacion</td>
+            <td>Valor</td>
+        </tr>
+        <tr>
+        <td><?php echo $nombreOp ?></td>
+        <td><?php echo $op ?></td>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+        </tr>
+    </tbody>
+</table>
+</div>
+
 </body>
-
 </html>
